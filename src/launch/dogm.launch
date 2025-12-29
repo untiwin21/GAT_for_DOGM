@@ -1,0 +1,19 @@
+<launch>
+
+  <arg name="scan_topic"  default="/scan"/>
+  <arg name="params_file" default="$(find dogm_ros)/config/params.yaml"/>
+  <arg name="base_frame"  default="base_link"/>
+
+  <node pkg="dogm_ros" type="dogm_node" name="dogm_node" output="screen">
+    <rosparam command="load" file="$(arg params_file)" />
+
+    <param name="lidar_topic" value="$(arg scan_topic)"/>
+    <param name="base_frame"  value="$(arg base_frame)"/>
+  </node>
+
+  <node pkg="dogm_ros" type="radar_velocity_viz_node" name="radar_velocity_viz_node" output="screen">
+      <param name="base_frame" value="$(arg base_frame)"/>
+      <param name="radar_viz_color_max_vel" value="3.0"/>
+  </node>
+
+</launch>

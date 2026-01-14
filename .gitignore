@@ -1,0 +1,12 @@
+# Datasets
+20251231_dataset/
+dataset/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Checkpoints and outputs
+*.pt
+*.npz
+*.png

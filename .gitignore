@@ -1,0 +1,8 @@
+/*
+!/gat_train_stgat_dogm.py
+!/.gitignore
+!/*/
+
+# Exclude dataset folders
+/20251231_dataset/
+/dataset/
